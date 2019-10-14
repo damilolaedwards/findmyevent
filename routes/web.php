@@ -14,3 +14,6 @@
 Route::get('/', 'HomeController@home');
 Route::get('/register', 'RegisterController@show')->name('register.show');
 Route::post('/register', 'RegisterController@create')->name('register.create');
+Route::get('/login', 'LoginController@show')->name('login.show');
+Route::post('/login', 'LoginController@login')->name('login.create');
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');

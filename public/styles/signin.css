@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 90px;
+    padding-top: 30px;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.header{
+    background-image: url(/images/header.png);
+}
+.signin-img{
+    height: 40vh;
+}
+
+/* Form styles */
+.form-group input{
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.text-right{
+    font-weight: bold;
+}
+.btn{
+    width: 300px;
+    background-color: black;
+    color: #fff;
+}
+
+.forgot{
+    align-content: flex-end;
+}
+
+.form-group{
+    padding-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+.height{
+    height: 15vh;
+}
