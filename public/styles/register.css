@@ -1,0 +1,73 @@
+body {
+    margin: 1em;
+}
+header {
+    background-image: url(images/audience.png); height: 525px;
+    text-align: center;
+    color: white;
+}
+main {
+    padding: 2.5em;
+}
+h1 {
+    position: relative;
+    top: 310px;
+}
+form div{
+    position: relative;
+    left: 45px;
+}
+form img {
+    position: relative;
+    left: 98px;
+}
+form input {
+   border-style: none; 
+   position: relative;
+    left: 0px;
+   
+}
+hr {
+    position: relative;
+    right: 265px;
+    border-color:  rgb(32, 29, 29);
+    position: relative;
+    bottom:15px;
+}
+h5 {
+    text-align: center;
+}
+.head{
+    position: relative;
+    left:92px;
+}
+.eye {
+    position: relative;
+    left:345px;
+}
+.btn {
+    width: 460px;
+    height: 65px;
+    position: relative;
+    left: 312px;
+}
+#logo {
+    position:relative;
+    left: 529px;
+    padding-bottom: 5em;
+}
+footer {
+    background-color: black;
+    padding: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    top: 67px;
+    right: 52px;
+    color: white;
+    border-style: none;
+    width: 1385px;
+}
+footer img {
+    position: relative;
+    left: 277px;
+}
