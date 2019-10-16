@@ -18,6 +18,10 @@ class Events extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->text('description');
+            $table->date('date');
+            $table->time('time');
+            $table->string('venue');
+            $table->enum('type',['paid', 'free']);
             $table->string('image')->nullable();
              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

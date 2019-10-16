@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Edit Event</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -40,55 +40,56 @@
 
         @endif
     <div class="container">
-      <p class="lead">Create New Event</p>
+      <p class="lead">Edit Your Event</p>
       <hr>
       <div class="row">
       <div class="col-md-8 offset-md-2">
-        <form method="POST" action="{{route('event.create')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('event.update', ['id' => $event->id])}}" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleInputEmail1">Event Title</label>
-    <input type="text" class="form-control" name="title" aria-describedby="title" placeholder="Enter event title">
+    <input type="text" class="form-control" name="title" aria-describedby="title" value="{{$event->title}}">
     
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Event description</label>
     <textarea class="form-control" name="description" cols="5">
-      
+      {{$event->description}}
     </textarea> 
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Date of Event</label>
-    <input type="date" class="form-control" name="date" aria-describedby="title" placeholder="Enter event date">
+    <input type="date" class="form-control" name="date" aria-describedby="title" value="{{$event->date}}">
     
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Time of Event</label>
-    <input type="time" class="form-control" name="time" aria-describedby="time" placeholder="Enter event time">
+    <input type="time" class="form-control" name="time" aria-describedby="time" value="{{$event->time}}">
     
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Venue of Event</label>
-    <input type="text" class="form-control" name="venue" aria-describedby="time" placeholder="Enter event venue">
+    <label >Venue of Event</label>
+    <input type="text" class="form-control" name="venue" aria-describedby="time" value="{{$event->venue}}">
     
   </div>
   <div class="form-group">
     <label>Type of Event</label>
     
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="type"  value="free" >
+  <input class="form-check-input" type="radio" name="type"  value="free" @if($event->type == 'free') checked @endif >
   <label class="form-check-label" for="exampleRadios1">
     Free
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="type"  value="paid">
+  <input class="form-check-input" type="radio" name="type"  value="paid" @if($event->type == 'paid') checked @endif>
   <label class="form-check-label" for="exampleRadios2">
     Paid
   </label>
 </div>
   </div>
+  <input type="hidden" name="id" value="{{$event->id}}">
   <div class="form-group ">
-    <input type="file" name="image" class="form-group"  >
+    <input type="file" value="Update event image" name="image" class="form-group"  >
     <label class="form-check-label" for="exampleCheck1">Upload Event Image File</label>
   </div>
   {{csrf_field()}}

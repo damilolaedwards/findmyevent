@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>{{$event->title}}</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -26,14 +26,12 @@
 
         
     <div class="container">
-      <p class="lead">All Upcoming Events</p>
+      <p class="lead">{{$event->title}}</p>
       <hr>
       <div class="row">
-   @if (count($events) > 0)
-    @foreach ($events as $event)
       <div class="col-md-6">
         <div class="card" style="width: 24rem;">
-  <a href="{{route('oneevent',['id' => $event->id])}}"><img src="images/events/{{$event->image}}" class="card-img-top" alt="{{$event->id}}"></a>
+  <img src="{{url('images/events/'.$event->image)}}" class="card-img-top" alt="{{$event->id}}">
   <div class="card-body">
     @if($event->type == 'free')
     <span class="badge badge-primary">Free</span>
@@ -51,8 +49,15 @@
   
 </div>
 </div>
-  @endforeach
-      @endif
+@if(\Auth::user())
+@if(\Auth::id() == $event->user_id)
+<div class="col-md-6">
+  <p><a class="btn btn-primary" href="{{route('editevent',['id' => $event->id])}}" role="button">Edit</a></p>
+  <p><a class="btn btn-danger" href="{{route('event.delete', ['id' => $event->id])}}" role="button">Delete</a></p>
+</div>
+@endif
+@endif
+
       </div>
       
     </div>

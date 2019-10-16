@@ -7,6 +7,8 @@
 </head>
 <body>
 
+	<p class="pull-right"><a class="btn btn-primary" href="{{route('logout')}}" role="button">LOGOUT</a></p>
+
 	 @if ($message = Session::get('message'))
 
         <div class="alert alert-success alert-block">
