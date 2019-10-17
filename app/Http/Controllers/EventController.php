@@ -33,6 +33,7 @@ class EventController extends Controller
      $event->user_id = Auth::id();
      $event->image = $imageName;
      $event->date = $request->date;
+     $event->price = $request->price;
      $event->time = $request->time;
      $event->venue = $request->venue;
      $event->type = $request->type;
@@ -91,6 +92,7 @@ class EventController extends Controller
      $event->image = $imageName;
  	}
      $event->date = $request->date;
+     $event->price = $request->price;
      $event->time = $request->time;
      $event->venue = $request->venue;
      $event->type = $request->type;
@@ -114,6 +116,7 @@ class EventController extends Controller
     }
 
     }
+
 
 
 }

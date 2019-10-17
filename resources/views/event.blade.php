@@ -87,6 +87,11 @@
   </label>
 </div>
   </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" name="price" aria-describedby="time" placeholder="Enter event price">
+    
+  </div>
   <div class="form-group ">
     <input type="file" name="image" class="form-group"  >
     <label class="form-check-label" for="exampleCheck1">Upload Event Image File</label>

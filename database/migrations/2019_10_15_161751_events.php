@@ -21,6 +21,7 @@ class Events extends Migration
             $table->date('date');
             $table->time('time');
             $table->string('venue');
+            $table->string('price');
             $table->enum('type',['paid', 'free']);
             $table->string('image')->nullable();
              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

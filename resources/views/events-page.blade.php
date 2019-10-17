@@ -30,7 +30,7 @@
       <hr>
       <div class="row">
       <div class="col-md-6">
-        <div class="card" style="width: 24rem;">
+    <div class="card" style="width: 24rem;">
   <img src="{{url('images/events/'.$event->image)}}" class="card-img-top" alt="{{$event->id}}">
   <div class="card-body">
     @if($event->type == 'free')
@@ -44,11 +44,43 @@
     <p><b>Date : </b>{{$event->date}}</p>
     <p><b>Time : </b> {{$event->time}}</p>
     <p><b>Venue : </b>{{$event->venue}}</p>
+    @if($event->type == 'paid')
+    <p><b>Event Price : </b> {{$event->price}}</p>
+    @endif
+  </div>
+  <div class="card-footer">
+  <form>
+    <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter your full name">
+    </div>
+    <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" aria-describedby="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+    <label>Phone</label>
+    <input type="text" class="form-control" name="phone" aria-describedby="phone" placeholder="Enter your phone">
+    </div>
 
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Ticket amount</label>
+    <select class="form-control" name="ticket_number">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select> 
+  </div>
+   <button type="submit" class="btn btn-primary">Pay</button>
+</form>
   </div>
   
 </div>
+ </div> 
 </div>
+
 @if(\Auth::user())
 @if(\Auth::id() == $event->user_id)
 <div class="col-md-6">
@@ -60,7 +92,8 @@
 
       </div>
       
-    </div>
+      
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
